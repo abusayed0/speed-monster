@@ -39,6 +39,7 @@ const typeController = (e) => {
   }
 
   userText += newLetter;
+  
 
   const newLetterCorrect = validate(newLetter);
 
@@ -58,6 +59,7 @@ const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
     return true;
   }
+  errorCount+=1;
   return false;
 };
 
