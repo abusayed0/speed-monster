@@ -3,8 +3,9 @@ const histories = document.getElementById("histories");
 function addHistory(questionText, timeTaken, errorCount) {
  
   console.log(errorCount)
-  debugger
-  const newRow = document.createElement("div");
+  
+  // these code not necessary 
+  /* const newRow = document.createElement("div");
   newRow.classList.add("card");
 
   newRow.innerHTML = `
@@ -16,7 +17,7 @@ function addHistory(questionText, timeTaken, errorCount) {
   `;
 
   histories.appendChild(newRow);
-
+ */
   let previousTests = JSON.parse(localStorage.getItem("testHistory")) || [];
   previousTests.push({ questionText, timeTaken, errorCount });
   localStorage.setItem("testHistory", JSON.stringify(previousTests));
