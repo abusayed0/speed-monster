@@ -22,9 +22,8 @@ fetch("./texts.json")
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
-
-  // Handle backspace press
-  if (newLetter == "Backspace") {
+  // Handle backspace press,remove last item if have any.
+  if (newLetter == "Backspace" && userText.length >0) {
     userText = userText.slice(0, userText.length - 1);
     return display.removeChild(display.lastChild);
   }
@@ -71,7 +70,7 @@ const gameOver = () => {
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
-  const timeTakenCeil = Math.ceil(timeTaken);
+  const timeTakenInt =parseInt(timeTaken);
 
   // show result modal
   resultModal.innerHTML = "";
@@ -84,12 +83,12 @@ const gameOver = () => {
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
-    <p>You took: <span class="bold">${timeTakenCeil}</span> seconds</p>
+    <p>You took: <span class="bold">${timeTakenInt}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText,timeTakenCeil,errorCount);
+  addHistory(questionText,timeTakenInt,errorCount);
 
   // restart everything
   startTime = null;
@@ -137,9 +136,15 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  console.log(startTime,currentTime)
   const timeSpent = (currentTime - startTime) / 1000;
+  const timeSpentInt= parseInt(timeSpent);
 
 
-  document.getElementById("show-time").innerHTML = `${startTime ? Math.ceil(timeSpent) : 0} seconds`;
+  document.getElementById("show-time").innerHTML = `${startTime ? timeSpentInt : 0} seconds`;
 }, 1000);
+
+
+// function for prevent auto scroll down when the space key press 
+window.onkeydown = function(e) {
+  return e.keyCode !== 32;
+};
