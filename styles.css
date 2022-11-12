@@ -130,11 +130,12 @@ body {
   margin: 30px 0;
 }
 button {
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   border: none;
   font-size: 16px;
   font-weight: bold;
   width: 300px;
+  width: 50%;
   height: 50px;
   color: white;
   background-color: #171717;
@@ -196,6 +197,9 @@ button {
 
   #histories{
     grid-template-columns: 1fr;
+  }
+  #result{
+    width: 70%;
   }
 }
 
