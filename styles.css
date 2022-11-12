@@ -11,9 +11,9 @@ body {
   font-family: "Zilla Slab", serif;
 }
 
-.box-container{
+.box-container,.blog-container{
   width: 70%;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
 }
 
 #question {
@@ -147,10 +147,10 @@ button {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3,1fr);
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
-.card{
+.card,.blog{
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
@@ -180,10 +180,16 @@ button {
   position: fixed;
   top: 0;
 }
+/* blog page blog layout  */
+.blog-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
 
 /* for mobile device  */
 @media only screen and (max-width: 688px) {
-  .box-container{
+  .box-container,.blog-container{
     padding: 0 20px;
     width: 100%;
   }
@@ -195,7 +201,7 @@ button {
 
 /* for tablet device  */
 @media only screen and (min-width: 689px) and (max-width: 992px){
-  .box-container{
+  .box-container,.blog-container{
     width: 85%;
   }
   #histories{
