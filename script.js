@@ -59,7 +59,7 @@ const validate = (key) => {
     return true;
   }
   errorCount+=1;
-  console.log(errorCount)
+  // console.log(errorCount)
   return false;
 };
 

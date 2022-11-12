@@ -1,7 +1,7 @@
 
 function addHistory(questionText, timeTaken, errorCount) {
  
-  console.log(errorCount)
+  // console.log(errorCount)
   
   // these code are not necessary 
   /* const newRow = document.createElement("div");

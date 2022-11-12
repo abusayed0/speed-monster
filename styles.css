@@ -68,7 +68,7 @@ body {
   top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 250px;
+  /* height: 250px; */
   width: 400px;
   background-color: #171717;
   border-radius: 15px;
@@ -200,6 +200,7 @@ button {
   }
   #result{
     width: 70%;
+    padding: 1rem;
   }
 }
 
